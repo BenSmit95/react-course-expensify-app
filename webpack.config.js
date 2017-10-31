@@ -12,7 +12,7 @@ module.exports = (env) => {
     
         // define output file
         output: {
-            path: path.join(__dirname, '/public/'),
+            path: path.join(__dirname, 'public', 'dist'),
             filename: 'bundle.js'
         },
         // loader, allows customization for (how to go about) loading files
@@ -52,10 +52,11 @@ module.exports = (env) => {
         devtool: isProduction ? 'source-map' : 'inline-source-map',
         // devServer, a better live server
         devServer: {
-            // contentBase = tell the dev server where the public files are served
-            contentBase: path.join(__dirname, '/public/'),
+            // contentBase = tell the dev server where the public files not from webpack are served
+            contentBase: path.join(__dirname, 'public'),
             // HistoryApiFallback ensures that we always serve index.html
-            historyApiFallback: true
+            historyApiFallback: true,
+            publicPath: '/dist/'
         },
     };
 };
