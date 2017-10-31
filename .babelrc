@@ -1,0 +1,12 @@
+//babel config
+{ // tell babel what presets to use
+    "presets": [
+        "env",
+        "react"
+    ],
+    // individual plugins
+    "plugins": [
+        "transform-class-properties",
+        "transform-object-rest-spread"
+    ]
+}
