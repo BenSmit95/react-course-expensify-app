@@ -16,8 +16,8 @@ module.exports = (env) => {
     // make new ExtractTextPlugin and give it the name of the bundle file
     const CSSExtract = new ExtractTextPlugin('styles.css');
     return {
-        // define entry file
-        entry: './src/app.js',
+        // define entry files, put the polyfill as the first item!
+        entry: ['babel-polyfill', './src/app.js'],
     
         // define output file
         output: {
